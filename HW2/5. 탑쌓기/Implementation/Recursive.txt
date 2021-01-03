@@ -1,0 +1,61 @@
+
+	/*
+	public static void searchTower(TreeSet<Integer> Blocks, int height) {
+        if(height > H)
+			return;
+
+	    if(checkMemo(Blocks)) {
+            MemoCut++;
+	        return;
+        }
+
+	    //// 새롭게 추가
+        if(!TowerGroup.containsKey(Blocks.size()))
+            TowerGroup.put(Blocks.size(), new HashSet<>());
+
+        TowerGroup.get(Blocks.size()).add(Blocks);
+        TowerCount++;
+
+
+        // Recursive Call
+        TreeSet<Integer> ExBlocks = new TreeSet<>(TotalBlock);
+        ExBlocks.removeAll(Blocks);
+
+        for (int block : ExBlocks) {
+            TreeSet<Integer> newBlocks = new TreeSet<>(Blocks);
+            newBlocks.add(block);
+
+            boolean hasUpper = (block != n-1) && newBlocks.contains(block+1);
+            boolean hasLower = (block != 0) && newBlocks.contains(block-1);
+
+            if (hasLower && hasUpper)
+                searchTower(newBlocks, height + h[block] - d[block-1] - d[block]);
+            else if (hasLower && !hasUpper)
+                searchTower(newBlocks, height + h[block] - d[block-1]);
+            else if (!hasLower && hasUpper)
+                searchTower(newBlocks, height + h[block] - d[block ]);
+            else
+                searchTower(newBlocks, height + h[block]);
+        } // end for
+    } // end searchTower
+	public static boolean checkMemo(TreeSet<Integer> Blocks){
+
+	    //Same Tower
+		if(TowerGroup.containsKey(Blocks.size()) && TowerGroup.get(Blocks.size()).contains(Blocks))
+                return true;
+
+
+		//Larger Tower including this
+		for(int towerSize = ExBlocks.size()+1; towerSize < n; towerSize++){
+            if (TowerGroup.containsKey(towerSize)) {
+                for(TreeSet<Integer> Tower : TowerGroup.get(towerSize)){
+                    if(Tower.containsAll(ExBlocks))
+                        return true;
+                }
+            }
+		}
+
+		return false;
+	}
+
+	*/
